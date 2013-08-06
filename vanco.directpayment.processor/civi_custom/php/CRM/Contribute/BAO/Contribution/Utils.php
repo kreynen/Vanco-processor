@@ -63,8 +63,8 @@ class CRM_Contribute_BAO_Contribution_Utils {
     require_once 'CRM/Core/Payment/Form.php';
     CRM_Core_Payment_Form::mapParams($form->_bltID, $form->_params, $paymentParams, TRUE);
 
-    require_once 'CRM/Contribute/DAO/ContributionType.php';
-    $contributionType = new CRM_Contribute_DAO_ContributionType();
+    require_once 'CRM/Financial/DAO/FinancialType.php';
+    $contributionType = new CRM_Financial_DAO_FinancialType();
     if (isset($paymentParams['contribution_type'])) {
       $contributionType->id = $paymentParams['contribution_type'];
     }
